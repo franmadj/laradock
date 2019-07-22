@@ -1,6 +1,60 @@
 # Docs: https://caddyserver.com/docs/caddyfile
 https://franciscomauri.com {
-    root /var/www/public
+    root /var/www/franciscomauri/public
+    fastcgi / php-fpm:9000 php {
+        index index.php
+    }
+
+    # To handle .html extensions with laravel change ext to
+    # ext / .html
+
+    rewrite {
+        to {path} {path}/ /index.php?{query}
+    }
+    gzip
+    browse
+    log /var/log/caddy/access.log
+    errors /var/log/caddy/error.log
+    # Uncomment to enable TLS (HTTPS)
+    # Change the first list to listen on port 443 when enabling TLS
+    tls labrest03@gmail.com
+
+    # To use Lets encrpt tls with a DNS provider uncomment these
+    # lines and change the provider as required
+    #tls {
+    #  dns cloudflare
+    #}
+}
+
+https://seodashboard.franciscomauri.com {
+    root /var/www/seo-dashboard/public
+    fastcgi / php-fpm:9000 php {
+        index index.php
+    }
+
+    # To handle .html extensions with laravel change ext to
+    # ext / .html
+
+    rewrite {
+        to {path} {path}/ /index.php?{query}
+    }
+    gzip
+    browse
+    log /var/log/caddy/access.log
+    errors /var/log/caddy/error.log
+    # Uncomment to enable TLS (HTTPS)
+    # Change the first list to listen on port 443 when enabling TLS
+    tls labrest03@gmail.com
+
+    # To use Lets encrpt tls with a DNS provider uncomment these
+    # lines and change the provider as required
+    #tls {
+    #  dns cloudflare
+    #}
+}
+
+https://ecommerce.franciscomauri.com {
+    root /var/www/eCommerce/public
     fastcgi / php-fpm:9000 php {
         index index.php
     }
