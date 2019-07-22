@@ -1,6 +1,6 @@
 # Docs: https://caddyserver.com/docs/caddyfile
 https://franciscomauri.com {
-    root /var/www/franciscomauri/public
+    root /var/www/franciscomauri
     fastcgi / php-fpm:9000 php {
         index index.php
     }
