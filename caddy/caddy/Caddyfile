@@ -80,8 +80,8 @@ https://ecommerce.franciscomauri.es {
     #}
 }
 
-laradock1.demo:80 {
-    root /var/www/public
+#laradock1.demo:80 {
+    #root /var/www/public
     # Create a Webhook in git.
     #git {
 	#repo https://github.com/xxx/xxx
@@ -91,7 +91,7 @@ laradock1.demo:80 {
     #    hook_type   generic
     #}
 
-}
+#}
 
 laradock2.demo:80 {
     # Create a Proxy and cors.
@@ -99,7 +99,3 @@ laradock2.demo:80 {
 	#cors
 }
 
-laradock3.demo:80 {
-    import authlist.conf
-    root /var/www/public
-}
