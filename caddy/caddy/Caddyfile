@@ -54,7 +54,7 @@ https://seodashboard.franciscomauri.es {
 }
 
 https://ecommerce.franciscomauri.es {
-    root /var/www/eCommerce/public
+    root /var/www/eCommerce
     fastcgi / php-fpm:9000 php {
         index index.php
     }
